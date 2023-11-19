@@ -1,0 +1,200 @@
+<ion-content>
+    <ion-grid ion-padding [fixed]="true">
+        <form [formGroup]="createEmployeeFormGroup">
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Full Name</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input
+                        placeholder="Full Name"
+                        formControlName="fullName"
+                        class="custom"
+                        fill="outline"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Position</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input
+                        placeholder="Position"
+                        formControlName="position"
+                        class="custom"
+                        fill="outline"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Employee Status</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-select
+                        placeholder="Employee Status"
+                        (ionChange)="handleEmployeeStatusChange($event)"
+                        fill="outline">
+                        <ion-select-option value="part_time">Part Time</ion-select-option>
+                        <ion-select-option value="full_time">Full Time</ion-select-option>
+                        <ion-select-option value="contractor">Contractor</ion-select-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Start Date of Employee</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-input
+                            type="date"
+                            formControlName="startDateOfEmployee"
+                            id="open_start_date_cal">
+                        </ion-input>
+                        <ion-modal
+                            id="example-modal"
+                            #modal
+                            trigger="open_start_date_cal">
+                            <ng-template>
+                                <ion-datetime
+                                    (ionChange)="handleStartDateChange($event)"
+                                    presentation="date-time"
+                                    [showDefaultButtons]="true"></ion-datetime>
+                            </ng-template>
+                        </ion-modal>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Department</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-select
+                        (ionChange)="handleDepartmentChange($event)"
+                        placeholder="Department"
+                        fill="outline"
+                        value="position">
+                        <ion-select-option value="it">IT</ion-select-option>
+                        <ion-select-option value="marketing">Marketing</ion-select-option>
+                        <ion-select-option value="accounting">Accounting</ion-select-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Gender</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-select
+                        (ionChange)="handleGenderChange($event)"
+                        placeholder="Gender"
+                        fill="outline">
+                        <ion-select-option value="female">Female</ion-select-option>
+                        <ion-select-option value="male">Male</ion-select-option>
+                    </ion-select>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Date of Birth</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-input
+                            type="date"
+                            formControlName="dateOfBirth"
+                            id="open_cal">
+                        </ion-input>
+                        <ion-modal
+                            id="example-modal"
+                            #modal
+                            trigger="open_cal">
+                            <ng-template>
+                                <ion-datetime
+                                    (ionChange)="handleDateOfBirthChange($event)"
+                                    presentation="date-time"
+                                    [showDefaultButtons]="true"></ion-datetime>
+                            </ng-template>
+                        </ion-modal>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Phone Number</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input
+                        placeholder="Phone Number"
+                        formControlName="phoneNumber"
+                        class="custom"
+                        fill="outline"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Email</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input
+                        placeholder="Email"
+                        formControlName="email"
+                        class="custom"
+                        fill="outline">
+                        <ion-icon slot="label" name="mail-outline"></ion-icon
+                    ></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-text color="dark">Remaining Annual Leave</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input
+                        placeholder="Remaining Annual Leave"
+                        formControlName="remainingAnnualLeave"
+                        class="custom"
+                        fill="outline"></ion-input>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col class="ion-text-center">
+                    <ion-button
+                        fill="outline"
+                        color="primary"
+                        shape="round"
+                        >Cancel</ion-button
+                    >
+                    <ion-button
+                        color="primary"
+                        shape="round"
+                        (click)="onSaveClick()"
+                        >Save</ion-button
+                    >
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-grid>
+</ion-content>
