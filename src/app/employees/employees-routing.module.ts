@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { EmployeeCreateComponent } from './employee-create/employee-create.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { EmployeeCreateComponent } from './components/employee-create/employee-create.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 
 const routes: Routes = [
     {
-        path: '', component: EmployeeListComponent,
+        path: '',
+        component: EmployeeListComponent,
     },
     {
-        path: 'create', component: EmployeeCreateComponent,
+        path: 'create',
+        component: EmployeeCreateComponent,
     },
 ];
 
